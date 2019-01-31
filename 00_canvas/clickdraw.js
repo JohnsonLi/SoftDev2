@@ -14,9 +14,13 @@ clear.addEventListener('click', () => {
 toggle.addEventListener('click', () => {
     state = state == 'dot' ? 'box' : 'dot';
     selection.innerHTML = state.toUpperCase();
-})
+});
 
 c.addEventListener('click', (e) => {
+    /*
+    ClientX/Y is relative to the whole screen and so getBoundingClientRect
+    is needed to get the coordinates relative to the canvas.
+    */
     let rect = c.getBoundingClientRect();
     let x = e.clientX - rect.left
     let y = e.clientY - rect.top
