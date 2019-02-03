@@ -22,11 +22,9 @@ c.addEventListener('click', (e) => {
     let currY = e.offsetY;
     ctx.lineTo(currX, currY);
     ctx.stroke();
-
     ctx.beginPath()
     ctx.arc(currX, currY, 50, 0, 2 * Math.PI);
     ctx.stroke();
-
     ctx.beginPath();
     ctx.moveTo(currX, currY);
 });
