@@ -1,7 +1,7 @@
 // lemonwater_soda Johnson Li, Kenny Li
 // SoftDev2 pd7
-// K01 -- ...and I want to Paint It Better
-// 2019-01-31
+// K02 -- Connecting the Dots
+// 2019-02-01
 
 const c = document.getElementById('playground');
 const clear = document.getElementById('clear');
