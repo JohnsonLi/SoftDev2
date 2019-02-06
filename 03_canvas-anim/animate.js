@@ -1,3 +1,10 @@
+/*
+cat -- Johnson Li, Emily Lee
+SoftDev2 pd07
+K#03 -- They lock us in the tower whenever we get caught
+2019-02-04
+*/
+
 const c = document.getElementById('playground');
 const circleButton = document.getElementById('circle');
 const stopButton = document.getElementById('stop');
@@ -10,26 +17,27 @@ var id;
 var growing;
 
 circleButton.addEventListener('click', () => {
+    // animate only if it isn't animating already
     if (!growing){
         animate();
+        growing=true;
     }
 });
 
 stopButton.addEventListener('click', () => {
-    stop();
+    cancelAnimationFrame(id);
+    growing=false;
 });
 
-var stop = () => {
-    cancelAnimationFrame(id);
-}
-
 var animate = () => {
-    console.log('wioqwiofh');
+    // console.log('wioqwiofh');
 
+    // if the circle gets bigger than the canvas, then start shrinking
     if(radius > c.width / 2|| radius > c.height / 2){
         increment = increment * -1;
     }
 
+    // if circle dissappears make it come back
     if(radius == 0){
         increment = 1;
     }
@@ -41,5 +49,5 @@ var animate = () => {
     ctx.fill();
     radius += increment;
 
-    id = requestAnimationFrame(animate);
+    id = requestAnimationFrame(animate); 
 }
