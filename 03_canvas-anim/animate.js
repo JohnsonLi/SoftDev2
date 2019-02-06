@@ -14,22 +14,18 @@ var ctx = c.getContext('2d');
 var radius = 0;
 var increment = 1;
 var id;
-var growing;
 
 circleButton.addEventListener('click', () => {
     // animate only if it isn't animating already
-    if (!growing){
-        animate();
-        growing=true;
-    }
+    animate();
 });
 
 stopButton.addEventListener('click', () => {
     cancelAnimationFrame(id);
-    growing=false;
 });
 
 var animate = () => {
+    cancelAnimationFrame(id);
     // console.log('wioqwiofh');
 
     // if the circle gets bigger than the canvas, then start shrinking
@@ -49,5 +45,5 @@ var animate = () => {
     ctx.fill();
     radius += increment;
 
-    id = requestAnimationFrame(animate); 
+    id = requestAnimationFrame(animate);
 }
