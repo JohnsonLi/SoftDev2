@@ -1,8 +1,8 @@
 /*
 cat -- Johnson Li, Emily Lee
 SoftDev2 pd07
-K#03 -- They lock us in the tower whenever we get caught
-2019-02-04
+K #04 -- What is it saving the screen from?
+2019-02-06 
 */
 
 const c = document.getElementById('playground');
@@ -15,8 +15,6 @@ var ctx = c.getContext('2d');
 var radius = 0;
 var increment = 1;
 var id;
-
-
 
 circleButton.addEventListener('click', () => {
     // animate only if it isn't animating already
@@ -59,21 +57,27 @@ var dvdLogoSetup = () => {
     window.cancelAnimationFrame(id);
 
     var rectWidth = 100;
-    var rectHeigt = 50;
+    var rectHeight = 50;
 
     var rectX = Math.floor(Math.random() * (c.width - rectWidth));
-    var rectY = Math.floor(Math.random() * (c.height - rectHeigt));
+    var rectY = Math.floor(Math.random() * (c.height - rectHeight));
 
     var xVel = 1;
     var yVel = 1;
 
-    // var logo = new Image();
-    // logo.src = 'logo_dvd.jpg';
-    // ctx.drawImage(?)
+    var logo = new Image();
+    logo.src = 'logo_dvd.jpg';
 
     var dvdLogo = () => {
         ctx.clearRect(0, 0, c.width, c.height);
-        ctx.fillRect(rectX, rectY, rectWidth, rectHeigt);
+	    ctx.drawImage(logo,rectX, rectY, rectWidth, rectHeight);
+
+	if(rectX==0 || rectX==c.width-rectWidth){
+	    xVel=-1*xVel
+	}
+	if(rectY==0 || rectY==c.width-rectHeight){
+	    yVel=-1*yVel
+	}
         rectX += xVel;
         rectY += yVel;
 
@@ -83,4 +87,3 @@ var dvdLogoSetup = () => {
     dvdLogo();
 }
 
-// dvdLogoSetup();
