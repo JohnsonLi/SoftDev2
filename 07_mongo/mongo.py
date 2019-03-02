@@ -12,7 +12,6 @@ gets inserted into the db using .insert().
 '''
 
 import json
-from pprint import pprint
 
 import pymongo
 
