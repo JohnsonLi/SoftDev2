@@ -1,4 +1,4 @@
-# Team Bob
+# Team Bob -- Johnson Li, Jeffrey Wu, Jerry Ye
 # SoftDev2 pd07
 # K08 -- Ay Mon, Go Git It From Yer Flask
 # 2019-03-06
