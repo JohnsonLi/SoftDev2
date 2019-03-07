@@ -50,7 +50,7 @@ def result():
             return redirect(url_for('options'))
 
         data = mongo.year_search(SERVER_ADDR, year)
-        return '<h3> GDP of China in {} was ${}'.format(year,data[0]['value'])
+        return '<h3> GDP of China in {} was ${} </h3>'.format(year,data[0]['value'])
 
     if request.args['option'] == 'between':
         year0 = request.args['year0']
