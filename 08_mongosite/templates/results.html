@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mongo</title>
+</head>
+<body>
+  <a href="http://localhost:5000/options"> Back </a>
+  <h2> Results </h2>
+  <table style="border: 1px solid black">
+    <tr>
+      <th style="padding-right: 100px"> Year </th>
+      <th> GDP (in dollars) </th>
+    </tr>
+  {% for item in data %}
+    <tr>
+      <td> {{item['year']}} </td>
+      <td> {{item['gdp']}} </td>
+    </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>

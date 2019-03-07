@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mongo</title>
+</head>
+<body>
+  {% set msgs = get_flashed_messages() %}
+  {% for each in msgs %}
+    <div>{{each}}</div>
+    <br>
+  {% endfor %}  
+
+  <form action='/connect'>
+    IP address of mongo server:
+    <br>
+    <input type="text" name="ip">
+    <button type="submit">submit</button>
+  </form>
+</body>
+</html>

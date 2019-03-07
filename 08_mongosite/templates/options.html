@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mongo</title>
+</head>
+<body>
+  <a href="/"> Back </a>
+  {% set msgs = get_flashed_messages() %}
+  {% for each in msgs %}
+    <div>{{each}}</div>
+    <br>
+  {% endfor %}  
+
+  
+  <h3> China's GDP (from 1960 - 2017) </h3>
+  <form action="/result">
+    <h4> Search for a year </h4>
+    Year: <input type="text" name="year"> <button type="submit" name="option" value="year"> submit </button>
+    <br>
+    <br>
+    <h4> Search for a year range </h4>
+    Between year <input type="text" name="year0"> and <input type="text" name="year1">. <button type="submit" name="option" value="between"> submit</button>
+    <br>
+    <br>
+    <h4> Search above/below value of GDP </h4>
+    <select name="abovebelow">
+      <option value="above" selected>Above</option>
+      <option value="below">Below</option>
+    </select>
+    $<input type="text" name="value">
+    <button type="submit" name="option" value="abovebelow"> submit </button>
+  </form>
+</body>
+</html>
