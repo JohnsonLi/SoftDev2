@@ -54,8 +54,8 @@ def query(zipcode, cuisine, grade, borough):
   
   return list(collection.find(query))
 
-# print(borough_search('Brooklyn'))
-# print(zipcode_search(10282))
+print(borough_search('Brooklyn'))
+print(zipcode_search(10282))
 # print(zipgrade_search('10282', 'a'))
 # print(zipscore_search('10282', 3))
 # print(query('11220', 'american', 'a', 'manhattan'))

@@ -27,7 +27,7 @@ def import_data(filename):
         for item in data[1]:
             collection.insert(item)
 
-import_data('chinagdp.json')
+# import_data('chinagdp.json')
 
 # returns the document that matches the year given
 def year_search(year):
@@ -62,7 +62,7 @@ def gdp_search(value, option=0):
         print('enter a valid option please (0 = less than, 1 = greater than')
 
 
-# print(year_search(2017))
+print(year_search(2017))
 # print(yearbtwn_search(2016, 2013))
 # print(gdp_search(863746717503.789, 0))
 
