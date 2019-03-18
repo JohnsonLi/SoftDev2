@@ -9,6 +9,7 @@ const move = document.getElementById('but_move');
 const faster = document.getElementById('faster');
 
 var moving = false;
+var multiplier = 1;
 
 var id;
 
@@ -20,8 +21,8 @@ vimage.addEventListener('click', e => {
   dot.setAttribute('cx', e.offsetX);
   dot.setAttribute('cy', e.offsetY);
   dot.setAttribute('fill', 'orange');
-  dot.dx = 1;
-  dot.dy = 1;
+  dot.dx = 1 * multiplier;
+  dot.dy = 1 * multiplier;
 
   vimage.appendChild(dot);
 
@@ -85,6 +86,7 @@ faster.addEventListener('click', () => {
       child = vimage.children[i];
       child.dx *= 2;
       child.dy *= 2;
+      multiplier = child.dx;
     }
     faster.innerHTML += '!';
   }
