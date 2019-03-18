@@ -76,6 +76,7 @@ clear.addEventListener('click', () => {
   cancelAnimationFrame(id);
   faster.innerHTML = 'faster';
   moving = false;
+  multiplier = 1;
   vimage.innerHTML = '';
 });
 
