@@ -73,7 +73,8 @@ var animate = () => {
 
 clear.addEventListener('click', () => {
   cancelAnimationFrame(id);
-  faster.innerHTML = 'faster'
+  faster.innerHTML = 'faster';
+  moving = false;
   vimage.innerHTML = '';
 });
 
