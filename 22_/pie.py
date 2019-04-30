@@ -1,0 +1,55 @@
+def inc(x):
+    return x + 1
+
+f = inc
+
+# print(f(10))
+def adder(a, b):
+    return a + b
+
+def caller(c):
+    print(c(2, 4))
+    print(c(3, 5))
+
+# caller(adder)
+
+def outer(x):
+    def contains(l):
+        return x in l
+    return contains
+
+# contains_15 = outer(15)
+# del outer
+# print(contains_15([1,2,3,4,5]))
+
+def repeat(s):
+    def p(t):
+        return s * t
+    return p
+
+# print(repeat("cool")(5))
+def outer():
+    x = "foo"
+    def inner():
+        nonlocal x
+        x = "bar"
+    inner()
+    return x
+
+# print(outer())
+
+def make_counter():
+    count = 0
+    def inc():
+        nonlocal count
+        count += 1
+    inc()
+    return inc
+
+ctr1 = make_counter()
+print(ctr1())
+print(ctr1())
+ctr2 = makecounter()
+print(ctr(2))
+print(ctr(1))
+print(ctr(2))
