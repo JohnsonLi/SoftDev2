@@ -1,0 +1,13 @@
+import random
+
+def make_HTML_heading(f):
+    txt = f()
+    def inner():
+        return '<h1>' + text + '</h1>'
+    return inner
+
+def greet():
+    return random.choice(['hi', 'hello', 'hola'])
+
+greet_heading = make_HTML_heading(greet)
+print(greet_heading(inner))
