@@ -16,9 +16,13 @@ def greet():
 def fib_c(f):
     memo = {}
     def help(x):
-        
+        if x in memo:
+            return memo[x]
+        memo[x] = f(x)
+        return memo[x]
     return help
 
+@fib_c
 def fib(n):
     if n == 0:
         return 0
@@ -27,4 +31,4 @@ def fib(n):
     else:
         return fib(n - 1) + fib(n - 2)
 
-        
+# print(fib(29))
